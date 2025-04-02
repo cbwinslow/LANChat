@@ -1,0 +1,9 @@
+
+
+    Server Errors: Check the console output for logs. The application uses Python’s logging module for error tracking.
+
+    Database Issues: Ensure that the directory has write permissions for creating the chat.db file.
+
+    File Uploads: Verify that the uploads/ directory exists and is writable.
+
+    WebSocket Issues: If messages are not delivered, check your network settings and browser console for WebSocket errors.
