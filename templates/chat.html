@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hacker Chat</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.socket.io/4.3.2/socket.io.min.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome, {{ username }} - Hacker Chat</h1>
+    <div id="online-users">
+      <strong>Online:</strong>
+      <span id="user-list">{{ online_users|join(', ') }}</span>
+    </div>
+    <div id="chat-box">
+      {% for msg in messages %}
+        <div class="chat-message">
+          <span class="timestamp">[{{ msg.timestamp.strftime("%H:%M:%S") }}]</span>
+          <strong>{{ msg.username }}</strong>: {{ msg.message }}
+        </div>
+      {% endfor %}
+    </div>
+    <div id="message-form">
+      <input id="message-input" type="text" placeholder="Type your message...">
+      <button id="send-btn">Send</button>
+    </div>
+    <hr>
+    <!-- File Exchange -->
+    <h2>File Exchange</h2>
+    <form id="upload-form" action="{{ url_for('upload_file') }}" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" required>
+      <button type="submit">Upload File</button>
+    </form>
+    <hr>
+    <!-- Screen Sharing & Remote Control -->
+    <div class="extras">
+      <a href="{{ url_for('screenshare') }}">Screen Share</a> |
+      <a href="{{ url_for('remotecontrol') }}">Remote Control</a> |
+      <a href="{{ url_for('logout') }}">Logout</a>
+    </div>
+  </div>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+

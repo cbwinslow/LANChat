@@ -1,0 +1,69 @@
+/* Hacker Theme - Dark background with neon green text */
+body {
+  background-color: #000;
+  color: #0f0;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+h1, h2 {
+  text-align: center;
+}
+input, button {
+  padding: 10px;
+  margin: 5px;
+  font-size: 1rem;
+  border: 1px solid #0f0;
+  background-color: #111;
+  color: #0f0;
+}
+input:focus, button:focus {
+  outline: none;
+}
+#chat-box {
+  height: 300px;
+  overflow-y: scroll;
+  border: 1px solid #0f0;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.chat-message {
+  margin-bottom: 5px;
+}
+.timestamp {
+  color: #555;
+  font-size: 0.8rem;
+}
+.flash-messages {
+  list-style: none;
+  padding: 0;
+}
+.flash-messages li {
+  padding: 5px;
+  margin: 5px 0;
+}
+.flash-messages .error {
+  color: #f00;
+}
+.flash-messages .success {
+  color: #0f0;
+}
+.extras a {
+  color: #0ff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+.extras a:hover {
+  text-decoration: underline;
+}
+#online-users {
+  text-align: center;
+  margin-bottom: 10px;
+}
+

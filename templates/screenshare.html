@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Screen Share - Hacker Chat</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Screen Share (Beta)</h1>
+    <p>This is a placeholder for screen sharing. For production, integrate WebRTC to capture and broadcast your screen.</p>
+    <button onclick="startScreenShare()">Start Screen Share</button>
+    <div id="screen-display"></div>
+    <a href="{{ url_for('chat') }}">Back to Chat</a>
+  </div>
+  <script>
+    function startScreenShare() {
+      if (navigator.mediaDevices && navigator.mediaDevices.getDisplayMedia) {
+        navigator.mediaDevices.getDisplayMedia({ video: true }).then(stream => {
+          const video = document.createElement('video');
+          video.srcObject = stream;
+          video.autoplay = true;
+          video.style.width = "100%";
+          document.getElementById('screen-display').appendChild(video);
+        }).catch(err => {
+          alert("Error starting screen share: " + err);
+        });
+      } else {
+        alert("Screen sharing is not supported in your browser.");
+      }
+    }
+  </script>
+</body>
+</html>
+
