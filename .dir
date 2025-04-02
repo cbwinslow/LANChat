@@ -1,0 +1,12 @@
+/var/www/chatserver/
+├── app.py                     # Main application
+├── requirements.txt           # Required Python packages
+├── uploads/                   # Directory for file uploads
+├── templates/
+│   ├── login.html             # Login page
+│   ├── chat.html              # Main chat page
+│   ├── screenshare.html       # Screen sharing stub
+│   └── remotecontrol.html     # Remote control (noVNC) stub
+└── static/
+    ├── style.css              # Hacker theme CSS
+    └── script.js              # Client-side JavaScript
